@@ -73,8 +73,6 @@ function App() {
         filteredData = filteredData?.filter((data) =>
           handleSearch(data, search.trim().toLowerCase())
         );
-
-        console.log(filteredData);
       });
 
       setGarments(filteredData);
