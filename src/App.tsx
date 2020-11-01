@@ -1,5 +1,5 @@
 import React, { FormEvent, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BarLoader } from "react-spinners";
 
 import "./App.css";
@@ -10,8 +10,11 @@ import sample from "./data/sample.json";
 import { IProduct, IProducts } from "./types/global";
 import ProductsContainer from "./components/products-container";
 import EmptyResults from "./components/empty-results";
+import { setLoading } from "./state/actions";
 
 function App() {
+  const dispatch = useDispatch();
+
   const [searchValue, setSearchValue] = useState("");
   const [products, setProducts] = useState<IProduct[]>();
   const [garments, setGarments] = useState<IProduct[]>();
@@ -33,7 +36,7 @@ function App() {
   }
 
   useEffect(() => {
-    console.log("started loading");
+    dispatch(setLoading(true));
 
     const data = sample.map((d: IProducts) => {
       const product: IProduct = {
@@ -53,7 +56,7 @@ function App() {
     setProducts(data);
     setSearchValue("");
 
-    console.log("finished loading");
+    dispatch(setLoading(false));
 
     return () => {};
   }, []);
