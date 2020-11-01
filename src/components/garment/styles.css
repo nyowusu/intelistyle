@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 30px;
+  width: 260px;
+}
+
+.image-container {
+  margin-bottom: 10px;
+}
+
+.image {
+  width: 180px;
+  height: 200px;
+}
+
+.product-details {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.product-details span {
+  text-transform: uppercase;
+}
+
+.product-details span:nth-child(2) {
+  font-size: small;
+}
+
+.product-details span:last-child {
+  font-weight: bolder;
+}
