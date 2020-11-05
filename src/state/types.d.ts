@@ -5,4 +5,6 @@ export interface IGarments {
 
   loading: boolean;
   data: IProducts[];
+
+  searchValue: string;
 }

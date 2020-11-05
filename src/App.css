@@ -2,38 +2,6 @@ body {
   font-family: sans-serif;
 }
 
-.menu-container {
-  height: 80px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.2);
-}
-
-.title {
-  text-transform: uppercase;
-  color: pink;
-  font-size: x-large;
-}
-
-.search-container {
-  display: flex;
-  flex-flow: column;
-  height: 100px;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 50px;
-  border-radius: 10px;
-}
-
-.search {
-  height: 30px;
-  font-size: medium;
-  width: 100%;
-  line-height: 2.8;
-}
-
 .results {
   display: flex;
   justify-content: center;
@@ -41,8 +9,12 @@ body {
   flex-flow: row wrap;
 }
 
-@media (min-width: 576px) {
-  .search {
-    width: 500px;
-  }
+.loading {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  position: relative;
 }

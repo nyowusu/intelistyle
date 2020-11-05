@@ -6,13 +6,11 @@ export default function Product(product: IProduct) {
   return (
     <div className="container">
       <div className="image-container">
-        <a href={product.url}>
-          <img
-            src={product.images[0].url}
-            alt={product.title}
-            className="image"
-          />
-        </a>
+        <img
+          src={product?.images[0]?.url}
+          alt={product.title}
+          className="image"
+        />
       </div>
       <div className="product-details">
         <span>{product.brand}</span>

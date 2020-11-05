@@ -1,5 +1,11 @@
+import { stat } from "fs";
 import { handleActions } from "redux-actions";
-import { LOAD_DATA, SET_API_ERROR, SET_LOADING } from "./action-types";
+import {
+  LOAD_DATA,
+  SET_API_ERROR,
+  SET_LOADING,
+  SET_SEARCH_VALUE,
+} from "./action-types";
 import { IGarments } from "./types";
 
 const defaultState: IGarments = {
@@ -7,11 +13,13 @@ const defaultState: IGarments = {
 
   loading: false,
   data: [],
+
+  searchValue: "",
 };
 
+//@ts-ignore
 const reducer = handleActions(
   {
-    //@ts-ignore
     [LOAD_DATA]: (state, { payload }) => ({
       ...state,
       data: payload,
@@ -26,6 +34,10 @@ const reducer = handleActions(
         ...state,
         apiError: payload,
       } as IGarments),
+    [SET_SEARCH_VALUE]: (state, { payload }) => ({
+      ...state,
+      searchValue: payload,
+    }),
   },
   defaultState
 );
